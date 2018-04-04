@@ -3,6 +3,7 @@ package com.example.microservicehw.kittens.webv;
 public class KittensWebResult {
 	private String id;
 	private String name;
+	private String apiUrl;
 	
 	public String getId() {
 		return id;
@@ -18,5 +19,13 @@ public class KittensWebResult {
 	
 	public void setName(String i) {
 		name = i;
+	}
+
+	public String getApiUrl() {
+		return apiUrl;
+	}
+
+	public void setApiUrl(String apiUrl) {
+		this.apiUrl = apiUrl;
 	}
 }
