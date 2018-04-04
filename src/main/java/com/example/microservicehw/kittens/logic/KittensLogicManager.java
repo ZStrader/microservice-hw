@@ -8,15 +8,15 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class KittensLogicManager {
 	
-	@Value("${KittenApiUrl:https://jsonplaceholder.typicode.com/users}")
-	private String KittenApiUrl;
-	@Value("${KittenApikey:}")
-	private String KittenApikey;
-	@Value("${KittenApiTags:}")
-	private String KittenApiTags;
+	@Value("${kittensApiUrl:https://jsonplaceholder.typicode.com/users}")
+	private String kittensApiUrl;
+	@Value("${kittensApikey:}")
+	private String kittensApikey;
+	@Value("${kittensApiTags:}")
+	private String kittensApiTags;
 	
 	public ResponseEntity<String> obtainApiImageUrl() {
-		String apiUrl = KittenApiUrl + KittenApikey + KittenApiTags;
+		String apiUrl = kittensApiUrl + kittensApikey + kittensApiTags;
 		RestTemplate rest = new RestTemplate();
 		ResponseEntity<String> response = rest.getForEntity(apiUrl, String.class);
 		return response;
