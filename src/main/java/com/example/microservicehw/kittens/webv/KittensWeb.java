@@ -1,24 +1,24 @@
 package com.example.microservicehw.kittens.webv;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+//import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.microservicehw.kittens.logic.KittensLogicManager;
+
 @RestController
 public class KittensWeb {
-	@Value("${kittenApiUrl:default.kittens.url}")
-	private String kittensApiUrl;
-	@Value("${kittenApiKey:111111}")
-	private String kittensApiKey;
-	
+	@Autowired
+	KittensLogicManager manager;
 	@RequestMapping("/kittens")
 	@ResponseBody
-	KittensWebResult kittens() {
-		KittensWebResult kwrst = new KittensWebResult();
-		kwrst.setId("1");
-		kwrst.setName("Steven");
-		kwrst.setApiUrl(kittensApiUrl);
-		return kwrst;
+	ResponseEntity<String> kittens() {
+		//KittensWebResult kwrst = new KittensWebResult();
+		ResponseEntity<String> url = manager.obtainApiImageUrl();
+		//kwrst.setApiUrl(url);
+		return url;
 	}
 }
