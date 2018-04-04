@@ -10,13 +10,13 @@ public class KittensLogicManager {
 	
 	@Value("${kittensApiUrl:https://jsonplaceholder.typicode.com/users}")
 	private String kittensApiUrl;
-	@Value("${kittensApikey:}")
-	private String kittensApikey;
+	@Value("${kittensApiKey:}")
+	private String kittensApiKey;
 	@Value("${kittensApiTags:}")
 	private String kittensApiTags;
 	
 	public ResponseEntity<String> obtainApiImageUrl() {
-		String apiUrl = kittensApiUrl + kittensApikey + kittensApiTags;
+		String apiUrl = kittensApiUrl + kittensApiKey + kittensApiTags;
 		RestTemplate rest = new RestTemplate();
 		ResponseEntity<String> response = rest.getForEntity(apiUrl, String.class);
 		return response;
