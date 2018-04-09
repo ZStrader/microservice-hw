@@ -13,18 +13,14 @@ import com.example.microservicehw.kittens.logic.KittensLogicManager;
 public class KittensWeb {
 	@Autowired
 	@Value("${}KittensApiUrl:")
-	private String KittensApiUrl;
-	@Value("${}KittensApiKey:")
-	private String KittensApiKey;
-	@Value("${}KittensApiTag:")
-	private String KittensApiTag;
+	
 	KittensLogicManager manager;
 	@RequestMapping("/car")
 	@ResponseBody
-	KittensWebResult kittens() {
-		KittensWebResult kwrst = new KittensWebResult();
-		//ResponseEntity<String> url = manager.obtainApiImageUrl();
-		kwrst.setApiUrl(KittensApiUrl);
-		return kwrst;
+	ResponseEntity<String> kittens() {
+		//KittensWebResult kwrst = new KittensWebResult();
+		ResponseEntity<String> url = manager.obtainApiImageUrl();
+		//kwrst.setApiUrl(KittensApiUrl);
+		return url;
 	}
 }
