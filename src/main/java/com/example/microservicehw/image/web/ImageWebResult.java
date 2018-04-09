@@ -1,6 +1,7 @@
 package com.example.microservicehw.image.web;
 
 public class ImageWebResult {
+	
 	private String apiUrl;
 	private String OAuthToken;
 	

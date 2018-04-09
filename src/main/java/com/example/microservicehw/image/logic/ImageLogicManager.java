@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class ImageLogicManager {
 
-	@Value("${imageApiUrl:https://jsonplaceholder.typicode.com/users}")
+	@Value("${imageApiUrl:}")
 	private String imageApiUrl;
 	@Value("${imageApiKey:}")
 	private String imageApiKey;

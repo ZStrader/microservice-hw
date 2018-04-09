@@ -13,12 +13,12 @@ public class ImageWeb {
 	
 	@Autowired
 	ImageLogicManager manager;
-	@RequestMapping("/image")
+	@RequestMapping("/scoot")
 	@ResponseBody
 	ResponseEntity<String> image() {
-		//KittensWebResult kwrst = new KittensWebResult();
+		
 		ResponseEntity<String> url = manager.obtainApiImageUrl();
-		//kwrst.setApiUrl(KittensApiUrl);
+		
 		return url;
 	}
 }
