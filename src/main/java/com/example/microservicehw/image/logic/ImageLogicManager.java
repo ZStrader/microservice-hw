@@ -16,7 +16,7 @@ public class ImageLogicManager {
 	private String imageApiTags;
 	
 	public ResponseEntity<String> obtainApiImageUrl() {
-		String apiUrl = imageApiUrl + imageApiKey + imageApiTags;
+		String apiUrl = imageApiUrl;
 		RestTemplate rest = new RestTemplate();
 		ResponseEntity<String> response = rest.getForEntity(apiUrl, String.class);
 		return response;
