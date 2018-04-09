@@ -13,7 +13,7 @@ import com.example.microservicehw.kittens.logic.KittensLogicManager;
 public class KittensWeb {
 	@Autowired
 	KittensLogicManager manager;
-	@RequestMapping("/kittens")
+	@RequestMapping("/car")
 	@ResponseBody
 	ResponseEntity<String> kittens() {
 		//KittensWebResult kwrst = new KittensWebResult();
