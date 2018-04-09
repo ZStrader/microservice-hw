@@ -15,10 +15,10 @@ public class KittensLogicManager {
 	@Value("${kittensApiTags:}")
 	private String kittensApiTags;
 	
-	public String obtainApiImageUrl() {
+	public ResponseEntity<String> obtainApiImageUrl() {
 		String apiUrl = kittensApiUrl + kittensApiKey + kittensApiTags;
 		RestTemplate rest = new RestTemplate();
 		ResponseEntity<String> response = rest.getForEntity(apiUrl, String.class);
-		return response.getBody();
+		return response;
 	}
 }

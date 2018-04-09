@@ -15,12 +15,10 @@ public class KittensWeb {
 	KittensLogicManager manager;
 	@RequestMapping("/car")
 	@ResponseBody
-	KittensWebResult kittens() {
-		KittensWebResult kwrst = new KittensWebResult();
-		String result = manager.obtainApiImageUrl();
-		
-		//ResponseEntity<String> url = manager.obtainApiImageUrl();
-		kwrst.setApiUrl(result);
-		return kwrst;
+	ResponseEntity<String> kittens() {
+		//KittensWebResult kwrst = new KittensWebResult();
+		ResponseEntity<String> url = manager.obtainApiImageUrl();
+		//kwrst.setApiUrl(KittensApiUrl);
+		return url;
 	}
 }
