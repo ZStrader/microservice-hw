@@ -13,7 +13,7 @@ public class ImageWeb {
 	
 	@Autowired
 	ImageLogicManager manager;
-	@RequestMapping("/car")
+	@RequestMapping("/image")
 	@ResponseBody
 	ResponseEntity<String> image() {
 		//KittensWebResult kwrst = new KittensWebResult();
