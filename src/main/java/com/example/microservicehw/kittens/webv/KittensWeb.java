@@ -12,8 +12,6 @@ import com.example.microservicehw.kittens.logic.KittensLogicManager;
 @RestController
 public class KittensWeb {
 	@Autowired
-	@Value("${}KittensApiUrl:")
-	
 	KittensLogicManager manager;
 	@RequestMapping("/car")
 	@ResponseBody
